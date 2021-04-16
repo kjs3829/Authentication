@@ -2,7 +2,6 @@ package com.example.auth.domain;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -10,17 +9,8 @@ import java.util.List;
 public class UserService {
     private UserRepository repository;
 
-    // TODO : Optional 공부 및 적용
-    public boolean checking(String id, String pwd) {
-        UserVO user = repository.selectById(id);
-        if (user != null) {
-            return user.getPassword().equals(pwd);
-        }
-        return false;
-    }
-
-    public String getPower(String id) {
-        return repository.selectById(id).getPower();
+    public int getRole(String id) {
+        return repository.selectById(id).getRole();
     }
 
     public UserVO signUp(UserVO userVO) {

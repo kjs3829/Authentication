@@ -39,8 +39,8 @@ public class UserController {
 
     @PostConstruct
     public void init() {
-        UserVO admin = new UserVO("admin","admin","Admin");
-        UserVO user = new UserVO("user", "user", "User");
+        UserVO admin = new UserVO("admin","admin",1);
+        UserVO user = new UserVO("user", "user", 0);
         service.signUp(admin);
         service.signUp(user);
     }
